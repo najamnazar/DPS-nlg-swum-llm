@@ -711,7 +711,7 @@ Preserved rate, counting verbatim quotes and verbatim parts: DPS_NLG 82.5%, DPS_
 ==============================================================================
 HUMAN-JUDGE AGREEMENT (fact preservation: human annotation of 30 files vs the LLM judge)
 ==============================================================================
-Generated: 2026-10-27 21:31:23
+Generated: 2026-11-05 11:32:28
 Annotation: design_pattern_preservation_annotation.xlsx (letters A-D mapped with manual_annotation_key.csv)
 Judge: meta-llama/llama-4-maverick (default corpora, fact_preservation_verdicts.csv)
 Files: 30   facts: 141   labels compared: 564 (facts x 4 summaries)
@@ -724,110 +724,103 @@ kappa = Cohen's kappa; AC1 = Gwet's AC1 (less sensitive to skewed label use);
 CI = 95% bootstrap interval over files. 'Binary' = Preserved vs Omitted+Incorrect.
 
 Scope                                     n  Agree  kappa CI              AC1  Agr(b)  k(b) CI(b)        
-all labels                              564    82%   0.67 [0.57, 0.75]   0.76     84%  0.68 [0.58, 0.76] 
-facts marked Correct in the code        512    84%   0.70 [0.59, 0.78]   0.79     85%  0.71 [0.61, 0.79] 
-tool: DPS_NLG                           141    76%   0.42 [0.21, 0.62]   0.70     77%  0.41 [0.18, 0.64] 
-tool: DPS_LLM (GPT)                     141    88%   0.75 [0.58, 0.88]   0.84     89%  0.77 [0.61, 0.90] 
-tool: DPS_LLM (Mistral)                 141    83%   0.67 [0.49, 0.78]   0.77     83%  0.66 [0.49, 0.79] 
-tool: DPS_SWUM                          141    83%   0.36 [0.17, 0.55]   0.80     85%  0.32 [0.09, 0.56] 
+all labels                              564    85%   0.72 [0.62, 0.79]   0.80     86%  0.73 [0.63, 0.80] 
+facts marked Correct in the code        540    85%   0.71 [0.61, 0.79]   0.80     86%  0.72 [0.63, 0.80] 
+tool: DPS_NLG                           141    82%   0.50 [0.27, 0.71]   0.78     82%  0.50 [0.25, 0.74] 
+tool: DPS_LLM (GPT)                     141    89%   0.76 [0.60, 0.88]   0.85     90%  0.79 [0.64, 0.91] 
+tool: DPS_LLM (Mistral)                 141    86%   0.72 [0.54, 0.84]   0.81     86%  0.72 [0.55, 0.84] 
+tool: DPS_SWUM                          141    85%   0.46 [0.26, 0.64]   0.83     87%  0.41 [0.16, 0.65] 
 fact_type: role                          64    78%   0.59 [0.28, 0.74]   0.70     80%  0.58 [0.31, 0.73] 
-fact_type: kind                          24    88%   0.69 [0.49, 0.90]   0.84    100%  1.00 [1.00, 1.00] 
+fact_type: kind                          24    92%   0.79 [0.60, 1.00]   0.90    100%  1.00 [1.00, 1.00] 
 fact_type: inheritance                   96    90%   0.77 [0.61, 0.95]   0.86     90%  0.77 [0.60, 0.94] 
 fact_type: constructor                   28    89%   0.73 [0.33, 1.00]   0.87     89%  0.73 [0.33, 1.00] 
-fact_type: field                         28    89%   0.79 [0.58, 0.93]   0.86     93%  0.85 [0.66, 1.00] 
-fact_type: method                       248    73%   0.52 [0.39, 0.64]   0.64     74%  0.51 [0.38, 0.63] 
+fact_type: field                         28    86%   0.71 [0.40, 0.93]   0.81     89%  0.77 [0.45, 1.00] 
+fact_type: method                       248    80%   0.61 [0.46, 0.74]   0.73     80%  0.61 [0.47, 0.74] 
 fact_type: call                          76   100%   1.00 [1.00, 1.00]   1.00    100%  1.00 [1.00, 1.00] 
 category: pattern role                   64    78%   0.59 [0.29, 0.74]   0.70     80%  0.58 [0.31, 0.73] 
-category: identity                       24    88%   0.69 [0.49, 0.90]   0.84    100%  1.00 [1.00, 1.00] 
+category: identity                       24    92%   0.79 [0.60, 1.00]   0.90    100%  1.00 [1.00, 1.00] 
 category: relationship                  172    94%   0.88 [0.76, 0.97]   0.92     94%  0.88 [0.76, 0.97] 
-category: responsibility                304    76%   0.57 [0.44, 0.68]   0.68     77%  0.56 [0.42, 0.69] 
-repository: AbdurRKhalid                144    81%   0.61 [0.50, 0.72]   0.74     82%  0.62 [0.52, 0.71] 
-repository: JamesZBL                    204    84%   0.69 [0.43, 0.85]   0.78     85%  0.70 [0.44, 0.87] 
-repository: SpringFramework             216    82%   0.67 [0.58, 0.77]   0.76     83%  0.67 [0.56, 0.77] 
-pattern: AbstractFactory                 56    80%   0.55                0.75     80%  0.53              
+category: responsibility                304    81%   0.64 [0.50, 0.75]   0.75     82%  0.65 [0.51, 0.76] 
+repository: AbdurRKhalid                144    85%   0.68 [0.55, 0.77]   0.80     86%  0.69 [0.58, 0.79] 
+repository: JamesZBL                    204    83%   0.68 [0.43, 0.83]   0.78     84%  0.69 [0.44, 0.85] 
+repository: SpringFramework             216    88%   0.76 [0.65, 0.86]   0.83     88%  0.76 [0.64, 0.86] 
+pattern: AbstractFactory                 56    84%   0.61                0.80     84%  0.59              
 pattern: Adapter                         64    89%   0.79                0.85     91%  0.81              
 pattern: Decorator                       60    72%   0.48                0.62     73%  0.49              
 pattern: Facade                          52    90%   0.80                0.87     90%  0.80              
 pattern: FactoryMethod                   68    81%   0.63                0.75     81%  0.63              
-pattern: Memento                         88    88%   0.76                0.83     89%  0.77              
-pattern: Observer                        56    73%   0.53                0.63     77%  0.54              
-pattern: Singleton                       36    92%   0.84                0.89     92%  0.82              
+pattern: Memento                         88    93%   0.86                0.91     93%  0.86              
+pattern: Observer                        56    86%   0.71                0.81     89%  0.77              
+pattern: Singleton                       36    97%   0.94                0.96     97%  0.94              
 pattern: Visitor                         84    80%   0.62                0.73     81%  0.63              
 
 Confusion matrix, all labels (rows = judge, columns = human)
 judge \ human     PRESERVED    OMITTED  INCORRECT   total
-PRESERVED               243         75         15     333
+PRESERVED               258         74          1     333
 OMITTED                   1        218          4     223
-INCORRECT                 2          2          4       8
-total                   246        295         23     564
+INCORRECT                 2          1          5       8
+total                   261        293         10     564
 
 Per label, taking the human label as the reference:
-  PRESERVED  judge precision   73% (243/333), recall   99% (243/246)
-  OMITTED    judge precision   98% (218/223), recall   74% (218/295)
-  INCORRECT  judge precision   50% (4/8), recall   17% (4/23)
-Direction of the Preserved disagreements: judge Preserved / human not 90, human Preserved / judge not 3 (exact McNemar p = 2.71e-23).
+  PRESERVED  judge precision   77% (258/333), recall   99% (258/261)
+  OMITTED    judge precision   98% (218/223), recall   74% (218/293)
+  INCORRECT  judge precision   62% (5/8), recall   50% (5/10)
+Direction of the Preserved disagreements: judge Preserved / human not 75, human Preserved / judge not 3 (exact McNemar p = 5.24e-19).
 
 Disagreements by tool (judge -> human):
-  DPS_NLG             34 of 141: P->O 23, P->I 8, I->P 2, O->I 1
-  DPS_LLM (GPT)       17 of 141: P->O 13, P->I 2, O->I 1, I->O 1
-  DPS_LLM (Mistral)   24 of 141: P->O 19, P->I 4, O->P 1
-  DPS_SWUM            24 of 141: P->O 20, O->I 2, I->O 1, P->I 1
+  DPS_NLG             26 of 141: P->O 22, I->P 2, O->I 1, P->I 1
+  DPS_LLM (GPT)       16 of 141: P->O 14, I->O 1, O->I 1
+  DPS_LLM (Mistral)   20 of 141: P->O 19, O->P 1
+  DPS_SWUM            21 of 141: P->O 19, O->I 2
   (P = Preserved, O = Omitted, I = Incorrect)
 
 2. Preserved rate per summary (120 summaries = 30 files x 4 tools)
 ------------------------------------------------------------------------------
-Spearman rho = 0.80 (p = 1.9e-28); Pearson r = 0.80 (p = 4.1e-28); ICC(A,1) = 0.73
-Mean difference judge - human = +0.170 (median +0.000; Wilcoxon p = 1.17e-10); identical rate in 63 of 120 summaries; |difference| >= 0.5 in 17.
-  DPS_NLG            mean diff +0.224   Spearman  0.26   ICC(A,1)  0.20
-  DPS_LLM (GPT)      mean diff +0.086   Spearman  0.86   ICC(A,1)  0.83
-  DPS_LLM (Mistral)  mean diff +0.189   Spearman  0.69   ICC(A,1)  0.64
-  DPS_SWUM           mean diff +0.183   Spearman  0.29   ICC(A,1)  0.37
+Spearman rho = 0.83 (p = 2.4e-32); Pearson r = 0.83 (p = 3.7e-32); ICC(A,1) = 0.79
+Mean difference judge - human = +0.132 (median +0.000; Wilcoxon p = 2.61e-08); identical rate in 74 of 120 summaries; |difference| >= 0.5 in 11.
+  DPS_NLG            mean diff +0.142   Spearman  0.47   ICC(A,1)  0.38
+  DPS_LLM (GPT)      mean diff +0.076   Spearman  0.87   ICC(A,1)  0.85
+  DPS_LLM (Mistral)  mean diff +0.143   Spearman  0.74   ICC(A,1)  0.70
+  DPS_SWUM           mean diff +0.166   Spearman  0.40   ICC(A,1)  0.45
 
 3. Tools: label rates on the 30 files (micro: share of all facts)
 ------------------------------------------------------------------------------
 Tool                         Preserved          Omitted        Incorrect     Rank  Judge 150
                           human  judge     human  judge     human  judge     H  J      files
-DPS_NLG                  64.5%   85.1%    27.7%   12.1%     7.8%    2.8%     1  1      85.7%
-DPS_LLM (GPT)            58.2%   68.8%    39.7%   30.5%     2.1%    0.7%     2  2      67.8%
-DPS_LLM (Mistral)        47.5%   63.1%    49.6%   36.9%     2.8%    0.0%     3  3      61.1%
-DPS_SWUM                  4.3%   19.1%    92.2%   78.7%     3.5%    2.1%     4  4      19.9%
-Macro (mean of per-summary rates): DPS_NLG human 62.9% / judge 85.3%; DPS_LLM (GPT) human 72.6% / judge 81.3%; DPS_LLM (Mistral) human 58.0% / judge 76.9%; DPS_SWUM human 6.1% / judge 24.4%
+DPS_NLG                  70.2%   85.1%    27.0%   12.1%     2.8%    2.8%     1  1      85.7%
+DPS_LLM (GPT)            58.9%   68.8%    40.4%   30.5%     0.7%    0.7%     2  2      67.8%
+DPS_LLM (Mistral)        50.4%   63.1%    49.6%   36.9%     0.0%    0.0%     3  3      61.1%
+DPS_SWUM                  5.7%   19.1%    90.8%   78.7%     3.5%    2.1%     4  4      19.9%
+Macro (mean of per-summary rates): DPS_NLG human 71.1% / judge 85.3%; DPS_LLM (GPT) human 73.6% / judge 81.3%; DPS_LLM (Mistral) human 62.5% / judge 76.9%; DPS_SWUM human 7.8% / judge 24.4%
 
 4. Order of the four tools within each file (by preserved rate)
 ------------------------------------------------------------------------------
-Kendall tau-b: mean 0.85, median 0.91 over 29 files (files where either rater ties all four tools are skipped).
-Tool pairs ordered the same way: 116 of 118 pairs neither rater tied (98%); opposite 2; tied by at least one rater 62 of 180.
+Kendall tau-b: mean 0.88, median 1.00 over 29 files (files where either rater ties all four tools are skipped).
+Tool pairs ordered the same way: 115 of 117 pairs neither rater tied (98%); opposite 2; tied by at least one rater 63 of 180.
 Same best tool (any overlap of ties): 29 of 30 files.
 
 5. Annotator-only information (the judge has no counterpart)
 ------------------------------------------------------------------------------
-Code check of the 141 extracted facts: Correct 128, Incorrect 13
-  F04 fact 2 (method): ClientHttpRequestFactory defines method createRequest.  [Incorrect: ClientHttpRequestFactory only "declares" the createRequest method; it does not "define" it by providing an executable method body.]
+Code check of the 141 extracted facts: Correct 135, Incorrect 6
   F19 fact 1 (role): Flower is a concrete factory for Plant in the Abstract Factory pattern.  [Incorrect: Flower is a Memento originator, not an Abstract Factory concrete factory.]
   F19 fact 2 (role): Flower is a publisher for FlowerType in the Observer pattern.  [Incorrect: FlowerType is an enum of lifecycle states, not an observer interface.]
   F19 fact 3 (inheritance): Flower extends Plant.  [Incorrect: Flower implements the Plant interface]
   F19 fact 5 (constructor): Flower has a private constructor.  [Incorrect: The Flower only has one public constructor (Flower.java:L79).]
-  F20 fact 2 (method): SavepointManager defines method createSavepoint.  [Incorrect: SavepointManager only "declares" the createSavepoint method; it does not "define" it by providing an executable method body.]
-  F20 fact 3 (method): SavepointManager defines method rollbackToSavepoint.  [Incorrect: SavepointManager only "declares" the rollbackToSavepoint method; it does not "define" it by providing an executable method body.]
-  F20 fact 4 (method): SavepointManager defines method releaseSavepoint.  [Incorrect: SavepointManager only "declares" the releaseSavepoint method; it does not "define" it by providing an executable method body.]
-  F21 fact 6 (method): EventListener defines method update.  [Incorrect: EventListener Interface only "declares" the update method; it does not "define" it by providing an executable method body.]
-  F23 fact 3 (method): ApplicationListener defines method onApplicationEvent.  [Incorrect: ApplicationListener Interface only "declares" the onApplicationEvent method; it does not "define" it by providing an executable method body.]
   F25 fact 3 (field): LazyInitializationDirector has a static field INSTANCE of type LazyInitializationDirector.  [Incorrect: INSTANCE is a static field of the nested private static class InstanceHolder]
-  F26 fact 2 (method): SmartInitializingSingleton defines method afterSingletonsInstantiated.  [Incorrect: SmartInitializingSingleton only "declares" the afterSingletonsInstantiated method; it does not "define" it by providing an executable method body.]
   F27 fact 2 (inheritance): Mouse extends ComputerPart.  [Incorrect: ComputerPart is an interface and Mouse implements it]
-  On these facts: agreement 65% over 52 labels.
+  On these facts: agreement 92% over 24 labels.
 
 Unsupported claims about the pattern (annotator, optional row; Yes = summary claims something the code does not support):
   DPS_NLG            Yes 23   No  7   blank  0
   DPS_LLM (GPT)      Yes 15   No 15   blank  0
-  DPS_LLM (Mistral)  Yes 20   No 10   blank  0
+  DPS_LLM (Mistral)  Yes 21   No  9   blank  0
   DPS_SWUM           Yes  2   No 28   blank  0
 
 Extra facts recorded by the annotator: 47 in 22 files (Method call 24, Pattern role 17, Field 3, Constructor 3)
 Tool                Preserved  Omitted  Incorrect
 DPS_NLG                     0       18         29
-DPS_LLM (GPT)               2       32         13
-DPS_LLM (Mistral)           8       25         14
+DPS_LLM (GPT)               1       33         13
+DPS_LLM (Mistral)           5       28         14
 DPS_SWUM                    1       45          1
 Of these, pattern-role extra facts (17), labelled Incorrect: DPS_NLG 17, DPS_LLM (GPT) 13, DPS_LLM (Mistral) 14, DPS_SWUM 1
 
@@ -839,14 +832,103 @@ Of these, pattern-role extra facts (17), labelled Incorrect: DPS_NLG 17, DPS_LLM
     \toprule
     Scope & Labels & Agreement & $\kappa$ & 95\% CI & AC1 & Preserved (human) & Preserved (judge) \\
     \midrule
-    All labels & 564 & 82.4\% & 0.67 & [0.57, 0.75] & 0.76 & 43.6\% & 59.0\% \\
-    Facts correct in the code & 512 & 84.2\% & 0.70 & [0.59, 0.78] & 0.79 & 44.7\% & 58.2\% \\
+    All labels & 564 & 85.3\% & 0.72 & [0.62, 0.79] & 0.80 & 46.3\% & 59.0\% \\
+    Facts correct in the code & 540 & 85.0\% & 0.71 & [0.61, 0.79] & 0.80 & 46.7\% & 59.6\% \\
     \midrule
-    DPS\_NLG & 141 & 75.9\% & 0.42 & [0.21, 0.62] & 0.70 & 64.5\% & 85.1\% \\
-    DPS\_LLM (GPT) & 141 & 87.9\% & 0.75 & [0.58, 0.88] & 0.84 & 58.2\% & 68.8\% \\
-    DPS\_LLM (Mistral) & 141 & 83.0\% & 0.67 & [0.49, 0.78] & 0.77 & 47.5\% & 63.1\% \\
-    DPS\_SWUM & 141 & 83.0\% & 0.36 & [0.17, 0.55] & 0.80 & 4.3\% & 19.1\% \\
+    DPS\_NLG & 141 & 81.6\% & 0.50 & [0.27, 0.71] & 0.78 & 70.2\% & 85.1\% \\
+    DPS\_LLM (GPT) & 141 & 88.7\% & 0.76 & [0.60, 0.88] & 0.85 & 58.9\% & 68.8\% \\
+    DPS\_LLM (Mistral) & 141 & 85.8\% & 0.72 & [0.54, 0.84] & 0.81 & 50.4\% & 63.1\% \\
+    DPS\_SWUM & 141 & 85.1\% & 0.46 & [0.26, 0.64] & 0.83 & 5.7\% & 19.1\% \\
     \bottomrule
   \end{tabular}
 \end{table}
 <<<END HUMAN-JUDGE AGREEMENT>>>
+
+
+<<<BEGIN HUMAN EVALUATION WORD LIMITS>>>
+==============================================================================
+HUMAN EVALUATION UNDER WORD LIMITS (fact preservation: variants vs NLG and SWUM)
+==============================================================================
+Generated: 2026-11-05 11:36:40
+Files: 30   facts: 141   (same files and facts in every workbook)
+NLG and SWUM labels: design_pattern_preservation_annotation.xlsx (the baseline summaries are
+identical in every workbook, so they are labelled once and reused for every comparison).
+Default GPT/Mistral: design_pattern_preservation_annotation.xlsx
+Word-limit workbooks (used only when every GPT/Mistral label is filled in):
+  20w: used, 282 GPT/Mistral labels
+  40w: used, 282 GPT/Mistral labels
+  60w: used, 282 GPT/Mistral labels
+  80w: used, 282 GPT/Mistral labels
+Fact categories and summary words: fact_preservation_word_limits_verdicts.csv; all 1692 labels matched, fact texts identical.
+
+1. Human labels by tool (micro: share of all facts)
+------------------------------------------------------------------------------
+Corpus             Cond.     Words Preserved  Omitted Incorrect pattern role responsibili relationship     identity
+DPS_NLG            baseline   93.9     70.2%    27.0%      2.8%        81.2%        48.7%       100.0%       100.0%
+DPS_SWUM           baseline   14.8      5.7%    90.8%      3.5%        18.8%         6.6%         0.0%         0.0%
+DPS_LLM (GPT)      default    36.6     58.9%    40.4%      0.7%        62.5%        63.2%        44.2%       100.0%
+DPS_LLM (Mistral)  default    40.1     50.4%    49.6%      0.0%        50.0%        53.9%        37.2%       100.0%
+GPT 20w            20w        16.0     29.1%    70.2%      0.7%        43.8%        25.0%        30.2%        33.3%
+Mistral 20w        20w        18.1     29.1%    69.5%      1.4%        37.5%        28.9%        20.9%        66.7%
+GPT 40w            40w        29.1     53.9%    45.4%      0.7%        50.0%        60.5%        41.9%        66.7%
+Mistral 40w        40w        35.5     46.8%    53.2%      0.0%        43.8%        51.3%        32.6%       100.0%
+GPT 60w            60w        40.8     59.6%    39.7%      0.7%        56.2%        65.8%        44.2%       100.0%
+Mistral 60w        60w        47.0     55.3%    44.7%      0.0%        43.8%        61.8%        41.9%       100.0%
+GPT 80w            80w        49.1     67.4%    31.9%      0.7%        62.5%        73.7%        53.5%       100.0%
+Mistral 80w        80w        59.5     59.6%    40.4%      0.0%        43.8%        64.5%        51.2%       100.0%
+Facts per tool: pattern role 16, responsibility 76, relationship 43, identity 6, all 141
+Macro (mean of per-file rates): DPS_NLG 71.1%; DPS_SWUM 7.8%; DPS_LLM (GPT) 73.6%; DPS_LLM (Mistral) 62.5%; GPT 20w 36.9%; Mistral 20w 39.3%; GPT 40w 66.7%; Mistral 40w 60.3%; GPT 60w 72.5%; Mistral 60w 68.6%; GPT 80w 81.4%; Mistral 80w 71.9%
+
+2. Paired Wilcoxon signed-rank tests on the per-file Preserved rate (30 files)
+------------------------------------------------------------------------------
+Two-sided; r = matched-pairs rank-biserial (W+ - W-) / (W+ + W-), positive = the variant
+preserves more than the baseline. W/T/L = files where the variant is higher / tied / lower. alpha = 0.05
+
+Comparison                                Mean  Median d     W/T/L       W         p       r  Effect
+DPS_LLM (GPT) vs DPS_NLG          73.6%  71.1%    +0.000   11/10/9    96.0     0.736   +0.09  negligible
+DPS_LLM (GPT) vs DPS_SWUM         73.6%   7.8%    +0.775    27/3/0     0.0  4.44e-06   +1.00  very large *
+DPS_LLM (Mistral) vs DPS_NLG      62.5%  71.1%    +0.000   7/13/10    45.0     0.136   -0.41  medium
+DPS_LLM (Mistral) vs DPS_SWUM     62.5%   7.8%    +0.667    26/4/0     0.0  7.81e-06   +1.00  very large *
+GPT 20w vs DPS_NLG                36.9%  71.1%    -0.367    4/7/19    25.5  0.000617   -0.82  very large *
+GPT 20w vs DPS_SWUM               36.9%   7.8%    +0.225   19/10/1     6.5   0.00023   +0.94  very large *
+Mistral 20w vs DPS_NLG            39.3%  71.1%    -0.333    4/9/17    14.0  0.000415   -0.88  very large *
+Mistral 20w vs DPS_SWUM           39.3%   7.8%    +0.200    21/9/0     0.0  5.66e-05   +1.00  very large *
+GPT 40w vs DPS_NLG                66.7%  71.1%    +0.000   9/11/10    82.0     0.601   -0.14  small
+GPT 40w vs DPS_SWUM               66.7%   7.8%    +0.708    25/5/0     0.0  1.09e-05   +1.00  very large *
+Mistral 40w vs DPS_NLG            60.3%  71.1%    +0.000   9/10/11    66.0     0.145   -0.37  medium
+Mistral 40w vs DPS_SWUM           60.3%   7.8%    +0.667    25/5/0     0.0  1.16e-05   +1.00  very large *
+GPT 60w vs DPS_NLG                72.5%  71.1%    +0.000   11/10/9   100.0     0.852   +0.05  negligible
+GPT 60w vs DPS_SWUM               72.5%   7.8%    +0.750    26/4/0     0.0  6.43e-06   +1.00  very large *
+Mistral 60w vs DPS_NLG            68.6%  71.1%    +0.000  10/10/10   102.0     0.911   -0.03  negligible
+Mistral 60w vs DPS_SWUM           68.6%   7.8%    +0.708    27/3/0     0.0  5.27e-06   +1.00  very large *
+GPT 80w vs DPS_NLG                81.4%  71.1%    +0.000   14/10/6    68.5     0.172   +0.35  medium
+GPT 80w vs DPS_SWUM               81.4%   7.8%    +1.000    27/3/0     0.0   3.2e-06   +1.00  very large *
+Mistral 80w vs DPS_NLG            71.9%  71.1%    +0.000   10/11/9    84.5     0.672   +0.11  small
+Mistral 80w vs DPS_SWUM           71.9%   7.8%    +0.750    27/3/0     0.0  5.16e-06   +1.00  very large *
+(Mean = mean per-file Preserved rate of the variant and of the baseline; * p < alpha)
+
+\begin{table}[htbp]
+  \centering
+  \caption{Human-annotated design-pattern fact preservation under word limits (30 files, 141 facts). $r$: rank-biserial effect size of the paired Wilcoxon test of the per-file Preserved rate against NLG and SWUM (positive: the variant preserves more); * $p < 0.05$.}
+  \label{tab:human-word-limits}
+  \begin{tabular}{lrrrrrrrr}
+    \toprule
+    Corpus & Mean words & All & Pattern role & Responsibility & Relationship & Identity & $r$ vs NLG & $r$ vs SWUM \\
+    \midrule
+    DPS\_NLG & 93.9 & 70.2\% & 81.2\% & 48.7\% & 100.0\% & 100.0\% & -- & -- \\
+    DPS\_SWUM & 14.8 & 5.7\% & 18.8\% & 6.6\% & 0.0\% & 0.0\% & -- & -- \\
+    \midrule
+    DPS\_LLM (GPT) & 36.6 & 58.9\% & 62.5\% & 63.2\% & 44.2\% & 100.0\% & +0.09 & +1.00* \\
+    DPS\_LLM (Mistral) & 40.1 & 50.4\% & 50.0\% & 53.9\% & 37.2\% & 100.0\% & -0.41 & +1.00* \\
+    GPT 20w & 16.0 & 29.1\% & 43.8\% & 25.0\% & 30.2\% & 33.3\% & -0.82* & +0.94* \\
+    Mistral 20w & 18.1 & 29.1\% & 37.5\% & 28.9\% & 20.9\% & 66.7\% & -0.88* & +1.00* \\
+    GPT 40w & 29.1 & 53.9\% & 50.0\% & 60.5\% & 41.9\% & 66.7\% & -0.14 & +1.00* \\
+    Mistral 40w & 35.5 & 46.8\% & 43.8\% & 51.3\% & 32.6\% & 100.0\% & -0.37 & +1.00* \\
+    GPT 60w & 40.8 & 59.6\% & 56.2\% & 65.8\% & 44.2\% & 100.0\% & +0.05 & +1.00* \\
+    Mistral 60w & 47.0 & 55.3\% & 43.8\% & 61.8\% & 41.9\% & 100.0\% & -0.03 & +1.00* \\
+    GPT 80w & 49.1 & 67.4\% & 62.5\% & 73.7\% & 53.5\% & 100.0\% & +0.35 & +1.00* \\
+    Mistral 80w & 59.5 & 59.6\% & 43.8\% & 64.5\% & 51.2\% & 100.0\% & +0.11 & +1.00* \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+<<<END HUMAN EVALUATION WORD LIMITS>>>
